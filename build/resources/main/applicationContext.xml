@@ -1,0 +1,56 @@
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="address1" class="com.example.Address">
+        <property name="city" value="Bangalore"></property>
+        <property name="state" value="Karnataka"></property>
+    </bean>
+
+    <bean id="address2" class="com.example.Address">
+        <property name="city" value="chennai"></property>
+        <property name="state" value="tamil nadu"></property>
+    </bean>
+
+    <bean id="person" class="com.example.Person">
+        <property name="name" value="sultan"></property>
+
+        <property name="addressList"><null></null>
+            <!--<list>
+                <ref bean="address1"></ref>
+                <ref bean="address2"></ref>
+            </list>-->
+        </property>
+
+        <property name="addressSet">
+            <set>
+                <ref bean="address1"></ref>
+                <ref bean="address2"></ref>
+            </set>
+        </property>
+
+        <property name="stringAddressMap">
+            <map>
+                <entry key="Primary Address" value-ref="address1"></entry>
+                <entry key="secondary Address" value-ref="address2"></entry>
+            </map>
+        </property>
+
+        <property name="stringStringMap">
+            <props>
+                <prop key="first">first</prop>
+                <prop key="second">second</prop>
+            </props>
+        </property>
+
+        <property name="names">
+            <list>
+                <value>sultan</value>
+                <value>baig</value>
+            </list>
+        </property>
+
+    </bean>
+
+</beans>
